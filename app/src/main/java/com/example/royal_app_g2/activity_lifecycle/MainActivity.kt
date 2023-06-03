@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.royal_app_g2.constraint.ConstraintActivity
 import com.example.royal_app_g2.databinding.ActivityMainBinding
+import com.example.royal_app_g2.tools.utils.Tools
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        showToast(this,"Resumiendo actividad")
+        Tools.showToast(this,"Resumiendo actividad")
         showLog("OnResume")
     }
 
@@ -60,9 +61,6 @@ class MainActivity : AppCompatActivity() {
 
     /* */
     private fun showLog( text : String ) = Log.e("MiPrimerApp",text)
-
-    /* */
-    private fun showToast(context: Context,text: String) = Toast.makeText(context,text,Toast.LENGTH_SHORT).show()
 
 
 }
