@@ -3,4 +3,6 @@
     <string name="activity_constraint_layout_title">Constraint Layout</string>
     <string name="hola_mundo">Hola!</string>
     <string name="activity_constraint_layout_et_hint">Ingresa un texto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
