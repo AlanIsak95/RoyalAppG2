@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/POOFragment">
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.royal_app_g2.fragments.ui.HomeFragment"
+        android:name="com.example.royal_app_g2.fragments.ui.fragment_example.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,9 +19,16 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.royal_app_g2.fragments.ui.DetailFragment"
+        android:name="com.example.royal_app_g2.fragments.ui.fragment_example.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
+
+
+    <fragment
+        android:id="@+id/POOFragment"
+        android:name="com.example.royal_app_g2.fragments.ui.poo.POOFragment"
+        android:label="fragment_poo"
+        tools:layout="@layout/fragment_poo" />
 
 
 </navigation>

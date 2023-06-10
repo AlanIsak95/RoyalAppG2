@@ -1,4 +1,4 @@
-package com.example.royal_app_g2.fragments.ui
+package com.example.royal_app_g2.fragments.ui.fragment_example
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
