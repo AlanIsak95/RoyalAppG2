@@ -44,8 +44,8 @@ class GroupExampleFragment : Fragment() {
         /* */
         binding.btnFragmentGroupExample.setOnClickListener{
 
-                binding.etFragmentGroupExample.text.clear()
-                showMessage()
+            showMessage()
+            binding.etFragmentGroupExample.text.clear()
 
         }
 
