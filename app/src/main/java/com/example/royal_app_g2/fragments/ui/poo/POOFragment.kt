@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.royal_app_g2.databinding.FragmentPooBinding
+import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.tools.utils.Tools
 
 class POOFragment : Fragment() {
@@ -27,10 +28,31 @@ class POOFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.fragmentPooText.text = getName("Alan",10)
+        setUpListeners()
 
     }
 
+
+
+    private fun setUpListeners() {
+
+        val carro = createCar(Combustion.Diesel,CarColor.Red)
+
+        binding.fragmentPooBtn.setOnClickListener {
+            binding.fragmentPooText.text = carro.getModelName()
+        }
+
+    }
+
+    fun createCar(combustion : Combustion, color : CarColor):Car{
+        return Car(
+            modelo = CarModel.Model2022,
+            combustion = combustion,
+            color = color)
+    }
+
+
+    // region function
     fun getName():String{
         return "Alan"
     }
@@ -193,6 +215,7 @@ class POOFragment : Fragment() {
 
     }
 
+    //endregion
 
 }
 

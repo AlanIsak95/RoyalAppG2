@@ -6,6 +6,6 @@ import android.widget.Toast
 object Tools {
 
     /* */
-    fun showToast(context: Context, text: String) = Toast.makeText(context,text, Toast.LENGTH_SHORT).show()
+    fun showToast(context: Context, text: String) = Toast.makeText(context,text, Toast.LENGTH_LONG).show()
 
 }
