@@ -1,5 +1,6 @@
 package com.example.royal_app_g2.fragments.ui.poo
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,9 +27,62 @@ class POOFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        booleanCase()
+        binding.fragmentPooText.text = getName("Alan",10)
 
     }
+
+    fun getName():String{
+        return "Alan"
+    }
+
+    fun getName(edad : Int):String{
+        return "Alan tu edad es$edad"
+    }
+
+    fun getName(name : String ,edad : Int):String{
+        return "$name tu edad es $edad"
+    }
+
+
+    @SuppressLint("SetTextI18n")
+    fun showUserData(
+        name : String = "Sin Nombre",
+        age : Int = 10,
+        address : String = "Sin direccion",
+        lastName : String = "Sin Apellido"
+    ){
+        binding.fragmentPooText.text = "$name, $age, $address, $lastName"
+    }
+
+
+    //Fun sin parametros ni valor de retorno
+    fun decirHola(){
+
+        Tools.showToast(requireContext(),"Hola")
+
+    }
+
+    //Funcion con parametro sin valor de retorno
+    fun muestraEnToast(message : String){
+        Tools.showToast(requireContext(),message)
+    }
+
+    //Funcion con parametros sin valor de retorno
+    fun muestraEnToast2(mensaje1 : String, edad : Int){
+        Tools.showToast(requireContext(),"$mensaje1 y edad : $edad")
+    }
+
+    fun regresameUnString():String{
+        return "Alan desde Fun"
+    }
+    fun regresameUnString2() = "Alan desde Fun"
+
+    fun sumaDosNumeros(num1 : Int, num2 : Int):Int{
+        return num1 + num2
+    }
+
+    fun sumaDosNumeros1Linea(num1 : Int, num2 : Int) = num1 + num2
+
 
     /** */
     fun showNumber(){
