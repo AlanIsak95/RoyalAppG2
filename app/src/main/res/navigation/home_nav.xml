@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav"
-    app:startDestination="@id/POOFragment">
+    app:startDestination="@id/createDataClassFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -34,6 +34,11 @@
         android:name="com.example.royal_app_g2.fragments.ui.poo.ejercicio_grupal.GroupExampleFragment"
         android:label="fragment_group_example"
         tools:layout="@layout/fragment_group_example" />
+    <fragment
+        android:id="@+id/createDataClassFragment"
+        android:name="com.example.royal_app_g2.fragments.ui.crear_data_class.CreateDataClassFragment"
+        android:label="fragment_create_data_class"
+        tools:layout="@layout/fragment_create_data_class" />
 
 
 </navigation>

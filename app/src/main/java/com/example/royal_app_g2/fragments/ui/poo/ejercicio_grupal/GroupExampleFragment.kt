@@ -46,16 +46,12 @@ class GroupExampleFragment : Fragment() {
 
             //showMessage()
             //binding.etFragmentGroupExample.text.clear()
-            // TODO: llamado de la funcion
 
         }
 
     }
 
-    // TODO: CrearFuncion
-    //Crear una funcion que pida 6 atributos de una tienda(Valor del EditText tipo String ,Nombre,Direccion,Si esta abierta o no,numero de empleados,horario (string),
-    //Poner por defecto el valor si esta abierta tome el valor de Verdadero.
-    //Mostrar en el textView de esta vista los valores pasados a la funcion.
+
 
 
 

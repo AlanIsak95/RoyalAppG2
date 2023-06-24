@@ -6,7 +6,6 @@ import com.example.royal_app_g2.R
 
 class ConstraintLayoutPracticeActivity : AppCompatActivity() {
 
-    //TODO Practice 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
