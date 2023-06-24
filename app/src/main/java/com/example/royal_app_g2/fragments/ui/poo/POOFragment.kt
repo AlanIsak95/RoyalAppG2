@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.royal_app_g2.databinding.FragmentPooBinding
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
+import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
 import com.example.royal_app_g2.tools.utils.Tools
 
 class POOFragment : Fragment() {
@@ -80,7 +81,7 @@ class POOFragment : Fragment() {
     //Fun sin parametros ni valor de retorno
     fun decirHola(){
 
-        Tools.showToast(requireContext(),"Hola")
+        showToast("Hola")
 
     }
 
