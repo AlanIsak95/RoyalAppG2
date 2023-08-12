@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import com.example.royal_app_g2.R
 import com.example.royal_app_g2.databinding.ActivityHomeNcactivityBinding
+import com.example.royal_app_g2.tools.utils.Tools
 
 /** */
 class HomeNCActivity : AppCompatActivity() {
@@ -16,6 +17,18 @@ class HomeNCActivity : AppCompatActivity() {
 
         binding = ActivityHomeNcactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setUpListeners()
+
+    }
+
+    /** */
+    private fun setUpListeners() {
+
+        binding.clActivityHomeContainer.setOnClickListener {
+            Tools.showToast(this,"CLICK EN ACTIVITY")
+        }
+
     }
 
 

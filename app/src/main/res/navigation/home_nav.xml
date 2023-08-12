@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav"
-    app:startDestination="@id/createDataClassFragment">
+    app:startDestination="@id/e1Fragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -39,6 +39,12 @@
         android:name="com.example.royal_app_g2.fragments.ui.crear_data_class.CreateDataClassFragment"
         android:label="fragment_create_data_class"
         tools:layout="@layout/fragment_create_data_class" />
+    <fragment
+        android:id="@+id/e1Fragment"
+        android:name="com.example.royal_app_g2.fragments.ui.e1.E1Fragment"
+        android:label="fragment_e1"
+        tools:layout="@layout/fragment_e1" >
+    </fragment>
 
 
 </navigation>
