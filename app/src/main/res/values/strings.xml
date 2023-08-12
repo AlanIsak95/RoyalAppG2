@@ -1,4 +1,5 @@
 <resources>
+    <string name="fragment_e1_edit_text">Cantidad a sumar</string>
     <string name="app_name">Royal App G2</string>
     <string name="activity_constraint_layout_title">Constraint Layout</string>
     <string name="hola_mundo">Hola!</string>

@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.royal_app_g2.R
+import android.widget.EditText
 import com.example.royal_app_g2.databinding.FragmentE1Binding
+import com.google.android.material.textfield.TextInputEditText
 
 class E1Fragment : Fragment() {
 
@@ -26,8 +26,18 @@ class E1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpListeners()
+    }
 
-        binding.goToNewView.setOnClickListener {
+    private fun setUpListeners() {
+
+        binding.btnFragmentE1Add.setOnClickListener {
+
+            val number : String = binding.tiedFragmentE1Ed.text.toString()
+
+            val result : Double = 10.0 + number.toDouble()
+
+            binding.tvFragmentE1Result.text = "El resultado de sumar $number mas 10.0 es : $result"
 
         }
 
