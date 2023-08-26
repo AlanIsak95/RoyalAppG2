@@ -55,9 +55,10 @@ class POOFragment : Fragment() {
         val dineroDoble : Double = dineroString.toDouble()
 
 
+        val carro1 = createCar(Combustion.Diesel,CarColor.Red)
 
         binding.fragmentPooBtn.setOnClickListener {
-
+            carro1.encender(context = requireContext())
         }
 
     }

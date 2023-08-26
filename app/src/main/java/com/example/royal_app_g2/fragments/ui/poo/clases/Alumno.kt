@@ -17,6 +17,7 @@ data class Alumno(
     fun getMessage() = "Mi nombre es $nombre"
 
     fun showToastFromAlumno(){
+
     }
 
     // TODO: crear una funcion en la clase Alumno1 y mostrar un Toast con el nombre del Alumno.
