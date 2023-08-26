@@ -21,6 +21,6 @@ data class Alumno(
     }
 
     // TODO: crear una funcion en la clase Alumno1 y mostrar un Toast con el nombre del Alumno.
-    // TODO: Mostrar un toast en un dataclass
+    // TODO: Mostrar un toaghfhgfhgst en un dataclass
 }
 

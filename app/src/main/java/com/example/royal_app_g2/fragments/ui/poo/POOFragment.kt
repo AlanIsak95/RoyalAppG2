@@ -10,6 +10,13 @@ import com.example.royal_app_g2.databinding.FragmentPooBinding
 import com.example.royal_app_g2.fragments.ui.poo.clases.Alumno
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
+import com.example.royal_app_g2.fragments.ui.poo.utils.addHernandez
+import com.example.royal_app_g2.fragments.ui.poo.utils.getAlanEdad
+import com.example.royal_app_g2.fragments.ui.poo.utils.getAlanString
+import com.example.royal_app_g2.fragments.ui.poo.utils.getStringFragment
+import com.example.royal_app_g2.fragments.ui.poo.utils.printValue
+import com.example.royal_app_g2.fragments.ui.poo.utils.sayHello
+import com.example.royal_app_g2.fragments.ui.poo.utils.showMessageFromFragment
 import com.example.royal_app_g2.tools.utils.Tools
 
 class POOFragment : Fragment() {
@@ -45,7 +52,7 @@ class POOFragment : Fragment() {
         val persona1 = Alumno(nombre = "Alan", edad = 30, matricula = "ASDdC", dinero = null)
 
         val mensaje = persona1.getMessage()
-        showToast(mensaje)
+        //showToast(mensaje)
 
         //val dinero : Double? = persona1.dinero?.toDouble()
         //val dinero : Double = persona1.dinero!!.toDouble()
@@ -58,7 +65,15 @@ class POOFragment : Fragment() {
         val carro1 = createCar(Combustion.Diesel,CarColor.Red)
 
         binding.fragmentPooBtn.setOnClickListener {
-            carro1.encender(context = requireContext())
+
+            //val valor = getStringFragment()
+            //showMessageFromFragment(valor)
+
+            val name : String = "Juan"
+
+            // TODO: PROBAR AQUI
+            //name.printValue()
+
         }
 
     }
