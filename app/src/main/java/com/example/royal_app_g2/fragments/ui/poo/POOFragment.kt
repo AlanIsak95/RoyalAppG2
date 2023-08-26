@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.royal_app_g2.databinding.FragmentPooBinding
+import com.example.royal_app_g2.fragments.ui.poo.clases.Alumno
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
 import com.example.royal_app_g2.tools.utils.Tools
@@ -37,10 +38,26 @@ class POOFragment : Fragment() {
 
     private fun setUpListeners() {
 
-        val carro = createCar(Combustion.Diesel,CarColor.Red)
+        /* Son instancias/objeto de la clase Alumno*/
+        val ernesto = Alumno(nombre = "Alan", edad = 18, matricula = "ABC")
+        val jonathan = Alumno(nombre = "Alan", edad = 18, matricula = "ABC")
+        val alan = Alumno(nombre = "Alan", edad = 18, matricula = "ABC")
+        val persona1 = Alumno(nombre = "Alan", edad = 30, matricula = "ASDdC", dinero = null)
+
+        val mensaje = persona1.getMessage()
+        showToast(mensaje)
+
+        //val dinero : Double? = persona1.dinero?.toDouble()
+        //val dinero : Double = persona1.dinero!!.toDouble()
+
+        //Elvis Operator
+        val dineroString : String = persona1.dinero?:"0.0"
+        val dineroDoble : Double = dineroString.toDouble()
+
+
 
         binding.fragmentPooBtn.setOnClickListener {
-            binding.fragmentPooText.text = carro.getModelName()
+
         }
 
     }
