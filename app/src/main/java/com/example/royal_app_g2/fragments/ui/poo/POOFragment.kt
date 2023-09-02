@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.royal_app_g2.databinding.FragmentPooBinding
+import com.example.royal_app_g2.fragments.ui.poo.adapter.AlumnoAdapter
 import com.example.royal_app_g2.fragments.ui.poo.clases.Alumno
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
@@ -38,9 +40,18 @@ class POOFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpListeners()
+        setUpRecyclerView()
 
     }
 
+    private fun setUpRecyclerView() {
+
+        val alumnoStringList = listOf("Alan","Ernesto","Jonathan","dasd","dadssad","Juan","Sol","Marisol","Fanny")
+        binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
+        val myAdapter : AlumnoAdapter = AlumnoAdapter(listaAlumnos = alumnoStringList)
+        binding.rvFragmentPoo.adapter = myAdapter
+
+    }
 
 
     private fun setUpListeners() {
