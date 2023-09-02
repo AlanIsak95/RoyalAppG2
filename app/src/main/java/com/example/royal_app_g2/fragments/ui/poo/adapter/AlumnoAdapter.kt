@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.royal_app_g2.R
+import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
 
 class AlumnoAdapter(val listaAlumnos : List<String>) : RecyclerView.Adapter<AlumnoAdapter.ViewHolder>(){
 
@@ -17,6 +19,12 @@ class AlumnoAdapter(val listaAlumnos : List<String>) : RecyclerView.Adapter<Alum
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listaAlumnos[position]
         holder.itemText.text = item
+
+        holder.itemView.setOnClickListener {
+            holder.itemView.context.showToast("Click en $item")
+            holder.lottieAnim.playAnimation()
+        }
+
     }
 
     override fun getItemCount() = listaAlumnos.size
@@ -24,6 +32,7 @@ class AlumnoAdapter(val listaAlumnos : List<String>) : RecyclerView.Adapter<Alum
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val itemText : TextView = itemView.findViewById(R.id.tv_recycler_view_item)
+        val lottieAnim : LottieAnimationView = itemView.findViewById(R.id.lav_recycler_view_item)
     }
 
 }
