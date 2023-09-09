@@ -46,15 +46,15 @@ class POOFragment : Fragment() {
 
     private fun setUpRecyclerView() {
 
-        // TODO: TAREA pasar lista de alumnos al AlumnoAdapter
         val almunoList = listOf(
             Alumno(nombre = "Juan", edad = 35, matricula = "FAASDF", dinero = "40.0"),
-            Alumno(nombre = "Juan", edad = 35, matricula = "FAASDF", dinero = "40.0")
+            Alumno(nombre = "Alan", edad = 35, matricula = "FAASDF", dinero = "40.0"),
+            Alumno(nombre = "Isaac", edad = 35, matricula = "FAASDF", dinero = "40.0")
         )
 
         val alumnoStringList = listOf("Alan","Ernesto","Jonathan","dasd","dadssad","Juan","Sol","Marisol","Fanny")
         binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
-        val myAdapter  = AlumnoAdapter(listaAlumnos = alumnoStringList)
+        val myAdapter  = AlumnoAdapter(listaAlumnos = almunoList)
         binding.rvFragmentPoo.adapter = myAdapter
 
     }
