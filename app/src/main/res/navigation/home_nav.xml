@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/POOFragment"
-        android:name="com.example.royal_app_g2.fragments.ui.poo.POOFragment"
+        android:name="com.example.royal_app_g2.fragments.ui.poo.view.POOFragment"
         android:label="fragment_poo"
         tools:layout="@layout/fragment_poo" />
     <fragment

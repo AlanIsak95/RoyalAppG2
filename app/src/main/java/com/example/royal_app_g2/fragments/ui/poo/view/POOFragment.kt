@@ -1,4 +1,4 @@
-package com.example.royal_app_g2.fragments.ui.poo
+package com.example.royal_app_g2.fragments.ui.poo.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,19 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.royal_app_g2.data.retrofit.RetrofitConnection
+import com.example.royal_app_g2.data.retrofit.entity.ApiResponse
+import com.example.royal_app_g2.data.retrofit.entity.Result
 import com.example.royal_app_g2.databinding.FragmentPooBinding
+import com.example.royal_app_g2.fragments.ui.poo.CarColor
+import com.example.royal_app_g2.fragments.ui.poo.CarModel
+import com.example.royal_app_g2.fragments.ui.poo.Combustion
 import com.example.royal_app_g2.fragments.ui.poo.adapter.AlumnoAdapter
 import com.example.royal_app_g2.fragments.ui.poo.clases.Alumno
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
-import com.example.royal_app_g2.fragments.ui.poo.utils.addHernandez
-import com.example.royal_app_g2.fragments.ui.poo.utils.getAlanEdad
-import com.example.royal_app_g2.fragments.ui.poo.utils.getAlanString
-import com.example.royal_app_g2.fragments.ui.poo.utils.getStringFragment
-import com.example.royal_app_g2.fragments.ui.poo.utils.printValue
-import com.example.royal_app_g2.fragments.ui.poo.utils.sayHello
-import com.example.royal_app_g2.fragments.ui.poo.utils.showMessageFromFragment
 import com.example.royal_app_g2.tools.utils.Tools
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class POOFragment : Fragment() {
 
@@ -53,9 +55,9 @@ class POOFragment : Fragment() {
         )
 
         val alumnoStringList = listOf("Alan","Ernesto","Jonathan","dasd","dadssad","Juan","Sol","Marisol","Fanny")
-        binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
-        val myAdapter  = AlumnoAdapter(listaAlumnos = almunoList)
-        binding.rvFragmentPoo.adapter = myAdapter
+        //binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
+        //val myAdapter  = AlumnoAdapter(listaAlumnos = almunoList)
+        //binding.rvFragmentPoo.adapter = myAdapter
 
     }
 
@@ -79,17 +81,30 @@ class POOFragment : Fragment() {
         val dineroDoble : Double = dineroString.toDouble()
 
 
-        val carro1 = createCar(Combustion.Diesel,CarColor.Red)
+        val carro1 = createCar(Combustion.Diesel, CarColor.Red)
 
         binding.fragmentPooBtn.setOnClickListener {
 
-            //val valor = getStringFragment()
-            //showMessageFromFragment(valor)
+            RetrofitConnection().rickAndMortyApiService.getCharacters().enqueue(object : Callback<ApiResponse> {
+                override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
 
-            val name : String = "Juan"
+                    val listaDeObjetos : List<Result?>? = response.body()?.results
 
-            // TODO: PROBAR AQUI
-            //name.printValue()
+                    // TODO: LLenar Adapter con listaDeObjetos...
+                    // TODO: AlumnoAdapter Crear uno similar...
+
+                    binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
+                    //val myAdapter  = ApiAdapter( listaDeObjetos )
+                    //binding.rvFragmentPoo.adapter = myAdapter
+
+
+                }
+
+                override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                    showToast("Error al consumir el API")
+                }
+
+            })
 
         }
 
