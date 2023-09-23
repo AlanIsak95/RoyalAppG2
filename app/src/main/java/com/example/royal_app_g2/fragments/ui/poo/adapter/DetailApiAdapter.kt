@@ -1,5 +1,6 @@
 package com.example.royal_app_g2.fragments.ui.poo.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.royal_app_g2.R
 import com.example.royal_app_g2.data.retrofit.entity.Result
-import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
+import com.example.royal_app_g2.fragments.ui.poo.view.DetailActivity
 
 class DetailApiAdapter(
     val resultList : List<Result?>?
@@ -31,7 +32,15 @@ class DetailApiAdapter(
         holder.itemTextView.text = item?.name
 
         holder.itemTextViewDetail.setOnClickListener {
-            holder.itemView.context.showToast("Click en Detalle de ${item?.name}")
+
+            val context = holder.itemView.context
+
+            /** Lanza la nueva vista desde un RV*/
+            Intent( context, DetailActivity::class.java).also {
+                it.putExtra("name", item?.name)
+                context.startActivity(it)
+            }
+
         }
 
     }
