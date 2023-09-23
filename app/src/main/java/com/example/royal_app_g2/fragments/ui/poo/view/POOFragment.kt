@@ -14,7 +14,7 @@ import com.example.royal_app_g2.databinding.FragmentPooBinding
 import com.example.royal_app_g2.fragments.ui.poo.CarColor
 import com.example.royal_app_g2.fragments.ui.poo.CarModel
 import com.example.royal_app_g2.fragments.ui.poo.Combustion
-import com.example.royal_app_g2.fragments.ui.poo.adapter.AlumnoAdapter
+import com.example.royal_app_g2.fragments.ui.poo.adapter.DetailApiAdapter
 import com.example.royal_app_g2.fragments.ui.poo.clases.Alumno
 import com.example.royal_app_g2.fragments.ui.poo.clases.Car
 import com.example.royal_app_g2.fragments.ui.poo.funciones_extension.showToast
@@ -96,6 +96,9 @@ class POOFragment : Fragment() {
                     binding.rvFragmentPoo.layoutManager = LinearLayoutManager(requireContext())
                     //val myAdapter  = ApiAdapter( listaDeObjetos )
                     //binding.rvFragmentPoo.adapter = myAdapter
+
+                    val myAdapter  = DetailApiAdapter( listaDeObjetos )
+                    binding.rvFragmentPoo.adapter = myAdapter
 
 
                 }

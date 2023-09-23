@@ -20,14 +20,25 @@
 
     <TextView
         android:id="@+id/tv_recycler_view_item"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lav_recycler_view_item"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Titulo del item" />
+        tools:text="Nombre de elemento" />
+
+    <TextView
+        android:id="@+id/tv_recycler_view_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver detalle"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recycler_view_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
